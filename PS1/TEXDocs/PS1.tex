@@ -1,0 +1,135 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{booktabs}
+\usepackage{dcolumn}
+
+\begin{document}
+
+\begin{center}
+\textbf{ECON 2320 -- Economics of Labor and Population} \\
+\textbf{Problem Set 1} \\
+Samuel Brown \\
+Fall 2011 \\
+Due: October 03
+
+\end{center}
+\bigskip
+
+\arraycolsep 1pt
+
+\begin{enumerate}
+\item \begin{enumerate}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\item A scatterplot of log wages versus education, and the corresponding bivariate regression\footnote{Unless otherwise noted, all regressions include a constant.}, can be seen in Figure~\ref{fig:lw_ed_reg}. The result of this bivariate regression can be seen in the first column of Table~\ref{reg:ols}.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width=0.85\textwidth]{../Figures/fig1.eps}
+\caption{Log Wage vs. Education}
+\label{fig:lw_ed_reg}
+\end{figure}
+
+The second column of Table~\ref{reg:ols} contains the result of regressing log wages on education, age, age-squared, and gender and racial dummies. The coefficient on education means that \textit{ceteris paribus} each additional year of education causes an average 11\% increase in wages. Likewise, \textit{ceteris paribus} women's wages are on average 32\% lower than those of men. Surprisingly, the race coefficient indicates that whites' wages are \textit{ceteris paribus} on average 11\% lower than those of blacks, but this coefficient is not significantly different from zero. Since age enters the wage equation quadratically, its interpretation is less straightforward. The estimated equation implies that, \textit{ceteris paribus}, average wages increase with age until the age of 50, and then decline thereafter. This is a plausible life-cycle wage profile, and is in any case more plausible than a simple linear relationship between age and wages. Evidently including coefficients on age to the third and fourth powers, as in the second column of Table~\ref{reg:ols}, does not significantly improve the fit of the model.
+
+\item At 11.0\%, the estimated return to education from the multivariate regression is higher than the one from the bivariate regression, which is only 10.2\%. This implies that education is not distributed randomly across the twins population or, in other words, that educational attainment may be correlated with other twin characteristics.
+
+\input{tab1.tex}
+ 
+The mean characteristics of individuals with high school and college degrees can be seen in Table~\ref{tab:groupm}. A statistical comparison of these mean values can be seen in Table~\ref{tab:meant}. As is evident from these tables, individuals with different levels of education exhibit significantly different observable characteristics. There are likely unobserved characteristics that also vary systematically between such groups, such as cognitive skills or the ability to delay gratification, that are also related to earnings. These considerations imply that the OLS estimate of the relation between log wages and education may be biased.
+
+\input{tab2.tex}
+
+\item  Estimated schooling coefficients for the level wage equation can be seen in Figure~\ref{fig:hw_ed_dreg}, and corresponding estimates for the log wage equation can be seen in Figure~\ref{fig:lw_ed_dreg}.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width=0.65\textwidth]{../Figures/fig2.eps}
+\caption{Return to Wage vs. Education}
+\label{fig:hw_ed_dreg}
+\end{figure}
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width=0.65\textwidth]{../Figures/fig3.eps}
+\caption{Return to Log Wage vs. Education}
+\label{fig:lw_ed_dreg}
+\end{figure}
+
+The coefficient estimates from regressing level wages and log wages on dummy variables for each level of schooling can be seen in Figures~\ref{fig:hw_ed_dreg} and \ref{fig:lw_ed_dreg}, respectively. The coefficients in both cases suggest a nonlinear relationship between education and wages. This nonlinearity is more pronounced in the log wages equation, which suggests that the log wage profile across education is increasing throughout high school, roughly flat between high school and college, and increasing for the two years thereafter.
+
+The results of a dummy variable regression for log wages that also includes age, age-squared, gender, and race can be seen in the fourth column of Table~\ref{reg:ols}. An analogous regression for level wages can be seen in the sixth column of Table~\ref{reg:ols}. Allowing for nonlinearities in the return to education evidently improves the fit of the model, since the $R^{2}$ for each dummy regression is greater than twice that of its parametric counterpart.
+
+\item A scatter plot of hourly wages versus education can be seen in Figure~\ref{fig:hw_ed}. Evidently hourly wages exhibit greater variation for higher levels of education, suggesting heteroskedasticity in the level wage regression model. As can be seen in Figure~\ref{fig:lw_ed_reg}, this is not the case for the log wage regression model.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width=0.65\textwidth]{../Figures/fig4.eps}
+\caption{Hourly Wage vs. Education}
+\label{fig:hw_ed}
+\end{figure}
+
+\item The result of regressing log wages on education, age, age-squared, and gender and racial dummies can be seen in the second column of Table~\ref{reg:ols_robust}. Eicker-White standard errors are reported in brackets underneath the coefficient estimates. These standard errors are corrected for heteroskedasticity by using the OLS residuals to more accurately estimate the variance of the OLS estimators. In the case of the log wage equations, the Eicker-White standard errors for the education coefficients are numerically equivalent to their OLS counterparts. This provides evidence \emph{against} heteroskedasticity.
+
+\item The results of regressing the residuals from both the log and level wage equations on education, age, age-squared, gender, and race can be seen in columns one and three of Table~\ref{reg:ols_res}, respectively. In the case of log wages, $nR^{2}=16.32$, and in the case of level wages, $n{R}^2=34.00$. Both are greater than $11.07$, which is the 5\% critical value for a $\chi^{2}$-distribution with 5 degrees of freedom. This provides evidence of heteroskedasticity in both models. With a larger $nR^{2}$, the level wage residuals appear to be more heteroskedastic.
+
+The results of adding education-squared and interaction terms to the aforementioned regressions can be seen in columns two and four of Table~\ref{reg:ols_res}. For these regressions, in the case of log wages, $nR^{2}=33.32$, and in the case of level wages, $nR^{2}=62.56$. Both are greater than $19.68$, which is the 5\% critical value for a $\chi^{2}$-distribution with 11 degrees of freedom. This once again provides evidence of heteroskedasticity in both models.
+
+\item The assumption that the residuals from the log wage regression are uncorrelated may be violated because it is plausible that error terms are correlated within twin pairs, due to common unobservables (such as genetic heritage).
+
+The result of regressing log wages on education, age, age-squared, and gender and racial dummies can be seen in the second column of Table~\ref{reg:ols_robust}. Clustered standard errors are reported in braces underneath the coefficient estimates. The standard errors that account for clustering are larger because they incorporate the ``off-diagonal'' elements of the residual variance-covariance matrix when estimating the variance of the OLS estimators.
+
+\item The result of regressing average log wages on average education, age, age-squared, and gender and racial dummies can be seen in the fourth column of Table~\ref{reg:ols_robust}. This corrects for the clustering in the residuals since each twin pair now has a single error term, which is uncorrelated with other twin pairs' error terms.
+
+\item The bias in the estimated return to education from the regression of log wages on education, age, age-squared, gender, and race is as follows:
+\begin{equation}\text{E}\left[\hat{\beta}_{\text{OLS}}\right]=\left(1-\frac{\lambda}{1-R^{2}_{s,X}}\right)\beta,\end{equation}
+where $R^{2}_{s,X}$ is the $\text{R}^{2}$ from regressing $s$ on the other regressors and $\lambda$, the ``noise-to-total variance ratio'', is defined as follows:
+\begin{equation}\lambda \equiv \frac{\sigma_{u}^{2}}{\sigma_{s^{*}}^{2}+\sigma_{u}^{2}} : \frac{\text{Noise}}{\text{Signal}+\text{Noise}}\end{equation}
+
+\item A Two-Stage Least Squares (2SLS) estimate of the log wage equation, using the other twin's report of an individual's education level as an instrument for self-reported education, can be seen in the second column of Table~\ref{reg:ols_2SLS_Diff}. The 2SLS estimate of the return to education is larger than the OLS estimate presumably because it reduces the bias due to measurement error.
+
+Under the assumption that the measurement errors are classically distributed, the ``reliability ratio'' is defined as follows:
+\begin{equation}1-\frac{\sigma_{e}^{2}}{\sigma_{s}^{2}}=\frac{\text{Var}(s_{1}^{*})}{\sqrt{\text{Var}(s_{1}^{1})\text{Var}(s_{1}^{2})}}=\text{Corr}(s_{1}^{1},s_{1}^{2})\end{equation}
+The reliability ratio of the education data is roughly 93\%.
+
+\item If there is an unmeasured factor that is correlated with both an individual's educational attainment and his earnings, then this can bias the OLS estimate of the return to education by introducing a correlation between education and the error term in the regression model. In this case, the ``omitted variables bias'' is as follows:
+\begin{equation}\text{E}\left[\hat{\beta}_{\text{OLS}}\right]=\beta+\lambda\theta,\end{equation}
+where $\lambda$ is the partial correlation coefficient between $s$ and $A$, and $\theta$ is the partial correlation coefficient between log wages and $A$.
+
+\item \label{item:omb} The result of regressing the difference in wages between twins on their difference in educational attainment can be seen in the third column of Table~\ref{reg:ols_2SLS_Diff}. Note that the coefficient on education is lower in this regression than it is in the result of regressing log wages on education, age, age-squared, and gender and racial dummies. This suggests that omitted variables may be biasing up the latter estimate.
+
+\item A scatterplot of the difference in twins' log wages and the difference in twins' self-reported education can be seen in Figure~\ref{fig:dlw_ded}. Most of the observations are clustered around $0$ on the $x$-axis, suggesting that measurement error could be a large component of the variation in this variable.  If the latter is the case, then measurement error may be biasing \emph{down} the estimated return to education in the first-differenced equation, contrary to the omitted variables explanation offered in \ref{item:omb}.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width=0.65\textwidth]{../Figures/fig5.eps}
+\caption{Difference in Log Wage vs. Difference in Education}
+\label{fig:dlw_ded}
+\end{figure}
+
+First-differencing can exacerbate measurement error by subtracting out much of the signal in the differenced variables, so that measurement error becomes a larger component of the remaining variation.
+
+\item A 2SLS regression of the the first-differenced log wage equation, using the second twin's reported difference in education as an instrument for the first twin's reported difference in education, can be seen in the fourth column of Table~\ref{reg:ols_2SLS_Diff}. The estimated return to education is now larger than that of part \ref{item:omb}, because instrumenting for the difference in education presumably reduces the bias due to measurement error. If the measurement error of a twin's self-report is correlated with the measurement error of his twin's report of his education, then the classical measurement error assumptions are violated and instrumenting for the difference in education as described above no longer eliminates measurement error bias in the estimates. A solution to this problem would be using the difference in cross-reports in education as an instrument for the difference in self-reports.
+
+\item If the classical measurement error assumptions hold, one may conclude that the size of the omitted variables bias in the OLS estimate of the returns to education is ``small''. (Compare the coefficient on education in the first column of Table~\ref{reg:ols_2SLS_Diff} that of the fourth column.) Comparing twin pair differences across families reduces the omitted variables problem by differencing out unobservables that are common between twins before making cross-family comparisons. However, it is doubtful that this operation removes all relevant unobservables from the data.
+
+\end{enumerate}
+
+\item \begin{enumerate}
+
+\item \label{item:comp_reg} The result of regressing log wages on education, experience, experience-squared, and dummies for gender and marital status and computer use, can be seen in the first column of Table~\ref{reg:ols_comp}. The coefficient on education means that \textit{ceteris paribus} each additional year of education causes an average 7\% increase in wages. Likewise, \textit{ceteris paribus} women's wages are on average 22\% lower than those of men, and \textit{ceteris paribus} married individuals make on average 3.5\% more than those that are unmarried. The coefficients on experience suggest that \textit{ceteris paribus} the average returns to experience are increasing at a decreasing rate. Finally, \textit{ceteris paribus} the coefficient on computer use implies an average 17\% wage premium for using a computer.
+
+\item The result of adding dummies for pencil, telephone, calculator, and hammer use to the regression described in \ref{item:comp_reg} can be seen in the second column of Table~\ref{reg:ols_comp}. This leads to slight reductions in the coefficients on education and computer use. The result of adding dummies for individuals' occupation categories to this regression can be seen in the third column of Table~\ref{reg:ols_comp}. This leads to a significant reduction in the coefficient on computer use, reducing it by more than half of its value in \ref{item:comp_reg}. This suggests that there is substantial omitted variable bias in the initial estimated return to computer use, since controlling for additional factors reduces that estimate by so much. In other words, the initial estimate is ``soaking up'' the effects of occupation-specific factors that are positively correlated with wages (and computer use).
+
+\end{enumerate}
+\end{enumerate}
+
+\input{reg1.tex}
+\input{reg3.tex}
+\input{reg2.tex}
+\input{reg4.tex}
+\input{reg5.tex}
+
+\end{document}

@@ -1,0 +1,53 @@
+\begin{table}[h!]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{OLS Estimates of Birthweight Equations\label{reg:ols}}
+\begin{tabular}{l*{3}{D{.}{.}{-1}}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         \\
+\midrule
+Constant            &    3426.051\sym{***}&    3114.409\sym{***}&    2367.558\sym{***}\\
+                    &     (1.696)         &    (42.935)         &   (701.418)         \\
+Mother Smoked       &    -257.865\sym{***}&    -216.574\sym{***}&    -213.959\sym{***}\\
+                    &     (3.992)         &     (3.986)         &     (4.025)         \\
+Mother Age          &                     &      18.371\sym{***}&     133.672         \\
+                    &                     &     (2.462)         &   (102.127)         \\
+Mother Age$^2$      &                     &      -0.340\sym{***}&      -5.736         \\
+                    &                     &     (0.044)         &     (5.449)         \\
+Mother Education    &                     &     -28.845\sym{***}&     -49.557\sym{***}\\
+                    &                     &     (5.092)         &     (7.350)         \\
+Mother Education$^2$&                     &       1.131\sym{***}&       1.873\sym{***}\\
+                    &                     &     (0.194)         &     (0.273)         \\
+Mother Unmarried    &                     &     -41.134\sym{***}&                     \\
+                    &                     &     (4.631)         &                     \\
+Mother Black        &                     &    -195.256\sym{***}&                     \\
+                    &                     &     (5.595)         &                     \\
+Mother Hispanic     &                     &    -119.586\sym{***}&                     \\
+                    &                     &     (9.984)         &                     \\
+Mother Other Race   &                     &    -184.963\sym{***}&                     \\
+                    &                     &    (11.724)         &                     \\
+Mother Drank        &                     &     -48.676\sym{***}&     -41.954\sym{***}\\
+                    &                     &    (11.461)         &    (11.402)         \\
+Prenatal Visits     &                     &      25.427\sym{***}&      24.285\sym{***}\\
+                    &                     &     (0.536)         &     (0.688)         \\
+Mo. Since Last      &                     &       0.934\sym{***}&       3.394\sym{***}\\
+                    &                     &     (0.052)         &     (0.118)         \\
+Prev. Birth Pre-Term&                     &    -489.033\sym{***}&    -488.293\sym{***}\\
+                    &                     &    (15.326)         &    (16.918)         \\
+Prev. Birth $>4\text{kg}$&                     &     518.148\sym{***}&     492.288\sym{***}\\
+                    &                     &    (13.581)         &    (14.371)         \\
+Twins or Greater    &                     &    -952.379\sym{***}&    -962.984\sym{***}\\
+                    &                     &    (13.759)         &    (15.964)         \\
+Hypertension        &                     &    -191.248\sym{***}&    -189.317\sym{***}\\
+                    &                     &    (11.405)         &    (13.650)         \\
+Mother Diabetic     &                     &      42.840\sym{**} &      41.053\sym{**} \\
+                    &                     &    (13.167)         &    (14.806)         \\
+Int. and $2^{\text{nd}}$ Order&\multicolumn{1}{c}{\ensuremath{\text{No}}}         &\multicolumn{1}{c}{\ensuremath{\text{No}}}         &\multicolumn{1}{c}{\ensuremath{\text{Yes}}}         \\
+\midrule
+\ensuremath{R^2}    &       0.030         &       0.152         &       0.159         \\
+\ensuremath{F}      &    4173.329         &    1126.417         &           .         \\
+\ensuremath{N}      &\multicolumn{1}{c}{138889}         &\multicolumn{1}{c}{138889}         &\multicolumn{1}{c}{138889}         \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Dependent variable is infant birthweight. Robust standard errors in parentheses.}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

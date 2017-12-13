@@ -1,0 +1,21 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{2SLS Estimates of the Effect of 1970--80 Changes in TSPs Pollution on Changes in Log Housing Values, Using TSPs Nonattainment in 1975 Only as an Instrument\label{reg:iv75}}
+\begin{tabular}{l*{3}{D{.}{.}{-1}}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         \\
+\midrule
+Mean TSPs ($\times 1/100$)&      -0.348\sym{***}&      -0.203\sym{**} &      -0.224\sym{**} \\
+                    &     (0.121)         &     (0.088)         &     (0.098)         \\
+Controls            &\multicolumn{1}{c}{\ensuremath{\text{No}}}         &\multicolumn{1}{c}{\ensuremath{\text{Yes}}}         &\multicolumn{1}{c}{\ensuremath{\text{Yes}}}         \\
+\midrule
+\ensuremath{R^2}    &       0.008         &       0.556         &       0.859         \\
+\ensuremath{F}      &       8.183         &      39.260         &           .         \\
+\ensuremath{N}      &\multicolumn{1}{c}{975}         &\multicolumn{1}{c}{970}         &\multicolumn{1}{c}{970}         \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Equation (3) includes quadratics, cubics, and interactions of the controls.}\\
+\multicolumn{4}{l}{\footnotesize Changes in TSPs instrumented for with 1975 TSPs nonattaiment status.}\\
+\multicolumn{4}{l}{\footnotesize Huber-White standard errors in parentheses.}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}

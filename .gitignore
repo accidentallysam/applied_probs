@@ -1,0 +1,17 @@
+*~
+data/
+#*#
+.#*
+*/Figures/*
+*.asv
+*.log
+*.aux
+*.dvi
+*.ptp
+*.gz
+*.raw
+*.dta
+pubtwins.txt
+restricted92.txt
+*/pscore202/*
+*/PS*.pdf

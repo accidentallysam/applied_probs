@@ -1,0 +1,25 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Control Function Estimates of the Capitalization of 1970--80 Changes in TSPs Pollution, with Correction for Selectivity Bias Due to Random Coefficients\label{reg:iv7576cf}}
+\begin{tabular}{l*{3}{D{.}{.}{-1}}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         \\
+\midrule
+Mean TSPs ($\times 1/100$)&      -0.328\sym{**} &      -0.208\sym{**} &      -0.201         \\
+                    &     (0.162)         &     (0.105)         &     (0.498)         \\
+\ensuremath{v_{i}} (first-stage residual) (\ensuremath{\times 1/100})&       0.504\sym{***}&       0.266\sym{**} &       0.217         \\
+                    &     (0.168)         &     (0.106)         &     (0.499)         \\
+\ensuremath{v_{i} \times \text{mean TSPs}}~(\ensuremath{\times 1/10000})&       0.116\sym{***}&       0.048\sym{*}  &       0.024         \\
+                    &     (0.043)         &     (0.026)         &     (0.063)         \\
+Controls            &\multicolumn{1}{c}{\ensuremath{\text{No}}}         &\multicolumn{1}{c}{\ensuremath{\text{Yes}}}         &\multicolumn{1}{c}{\ensuremath{\text{Yes}}}         \\
+\midrule
+\ensuremath{R^2}    &       0.049         &       0.560         &       0.856         \\
+\ensuremath{F}      &                     &                     &                     \\
+\ensuremath{N}      &\multicolumn{1}{c}{1000}         &\multicolumn{1}{c}{995}         &\multicolumn{1}{c}{995}         \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Equation (3) includes quadratics, cubics, and interactions of the controls.}\\
+\multicolumn{4}{l}{\footnotesize Changes in TSPs instrumented for with 1975/76 TSPs nonattaiment status.}\\
+\multicolumn{4}{l}{\footnotesize Bootstrap standard errors in parentheses (1000 reps.).}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}

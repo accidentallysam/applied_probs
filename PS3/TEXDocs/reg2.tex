@@ -1,0 +1,66 @@
+\begin{table}[htbp]\centering \footnotesize
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{2SLS Results for Average Gain Scores, Using Eligibility for P-900 as an Instrument\label{reg:2SLS}}
+\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+\toprule
+                    &\multicolumn{3}{c}{1988--1990}                                   &\multicolumn{3}{c}{1988--1992}                                   \\\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         \\
+\midrule
+\multicolumn{7}{l}{\em Panel A: First-stage estimates (P-900)} \\
+Eligible            &       0.872\sym{***}&       0.842\sym{***}&       0.841\sym{***}&       0.872\sym{***}&       0.842\sym{***}&       0.841\sym{***}\\
+                    &     (0.034)         &     (0.068)         &     (0.068)         &     (0.034)         &     (0.068)         &     (0.068)         \\
+\ensuremath{\overline{y_{j}^{88}}}&                     &       0.025         &       0.018         &                     &       0.025         &       0.018         \\
+                    &                     &     (0.087)         &     (0.086)         &                     &     (0.087)         &     (0.086)         \\
+\ensuremath{\left(\overline{y_{j}^{88}}\right)^{2}}&                     &      -0.001         &      -0.000         &                     &      -0.001         &      -0.000         \\
+                    &                     &     (0.001)         &     (0.001)         &                     &     (0.001)         &     (0.001)         \\
+\ensuremath{\left(\overline{y_{j}^{88}}\right)^{3}}&                     &       0.000         &       0.000         &                     &       0.000         &       0.000         \\
+                    &                     &     (0.000)         &     (0.000)         &                     &     (0.000)         &     (0.000)         \\
+\ensuremath{N_{j}^{88}}&                     &                     &       0.001         &                     &                     &       0.001         \\
+                    &                     &                     &     (0.001)         &                     &                     &     (0.001)         \\
+\ensuremath{\left(N_{j}^{88}\right)^{2}}&                     &                     &      -0.000         &                     &                     &      -0.000         \\
+                    &                     &                     &     (0.000)         &                     &                     &     (0.000)         \\
+\ensuremath{\overline{y_{j}^{88}}\cdot N_{j}^{88}}&                     &                     &      -0.000         &                     &                     &      -0.000         \\
+                    &                     &                     &     (0.000)         &                     &                     &     (0.000)         \\
+\ensuremath{R^{2}}  &       0.804         &       0.806         &       0.806         &       0.804         &       0.806         &       0.806         \\
+\addlinespace
+\multicolumn{7}{l}{\em Panel B: Reduced-form estimates (Average gain scores)} \\
+Eligible            &       4.975\sym{***}&       1.333         &       1.317         &       7.871\sym{***}&       3.453\sym{**} &       3.420\sym{**} \\
+                    &     (0.825)         &     (1.450)         &     (1.452)         &     (0.830)         &     (1.457)         &     (1.465)         \\
+\ensuremath{\overline{y_{j}^{88}}}&                     &      -0.415         &      -0.643         &                     &      -1.488         &      -1.866         \\
+                    &                     &     (1.515)         &     (1.551)         &                     &     (1.592)         &     (1.608)         \\
+\ensuremath{\left(\overline{y_{j}^{88}}\right)^{2}}&                     &       0.004         &       0.008         &                     &       0.022         &       0.027         \\
+                    &                     &     (0.026)         &     (0.027)         &                     &     (0.027)         &     (0.028)         \\
+\ensuremath{\left(\overline{y_{j}^{88}}\right)^{3}}&                     &      -0.000         &      -0.000         &                     &      -0.000         &      -0.000         \\
+                    &                     &     (0.000)         &     (0.000)         &                     &     (0.000)         &     (0.000)         \\
+\ensuremath{N_{j}^{88}}&                     &                     &       0.031         &                     &                     &       0.042         \\
+                    &                     &                     &     (0.045)         &                     &                     &     (0.039)         \\
+\ensuremath{\left(N_{j}^{88}\right)^{2}}&                     &                     &      -0.000         &                     &                     &      -0.000\sym{**} \\
+                    &                     &                     &     (0.000)         &                     &                     &     (0.000)         \\
+\ensuremath{\overline{y_{j}^{88}}\cdot N_{j}^{88}}&                     &                     &      -0.000         &                     &                     &       0.000         \\
+                    &                     &                     &     (0.001)         &                     &                     &     (0.001)         \\
+\ensuremath{R^{2}}  &       0.056         &       0.116         &       0.118         &       0.131         &       0.188         &       0.201         \\
+\addlinespace
+\multicolumn{7}{l}{\em Panel C: IV estimates (Average gain scores)} \\
+P-900               &       5.708\sym{***}&       1.583         &       1.567         &       9.030\sym{***}&       4.102\sym{**} &       4.068\sym{**} \\
+                    &     (0.946)         &     (1.723)         &     (1.727)         &     (0.953)         &     (1.731)         &     (1.743)         \\
+\ensuremath{\overline{y_{j}^{88}}}&                     &      -0.455         &      -0.671         &                     &      -1.592         &      -1.939         \\
+                    &                     &     (1.493)         &     (1.535)         &                     &     (1.567)         &     (1.591)         \\
+\ensuremath{\left(\overline{y_{j}^{88}}\right)^{2}}&                     &       0.005         &       0.009         &                     &       0.024         &       0.029         \\
+                    &                     &     (0.026)         &     (0.027)         &                     &     (0.027)         &     (0.027)         \\
+\ensuremath{\left(\overline{y_{j}^{88}}\right)^{3}}&                     &      -0.000         &      -0.000         &                     &      -0.000         &      -0.000         \\
+                    &                     &     (0.000)         &     (0.000)         &                     &     (0.000)         &     (0.000)         \\
+\ensuremath{N_{j}^{88}}&                     &                     &       0.029         &                     &                     &       0.036         \\
+                    &                     &                     &     (0.045)         &                     &                     &     (0.039)         \\
+\ensuremath{\left(N_{j}^{88}\right)^{2}}&                     &                     &      -0.000         &                     &                     &      -0.000\sym{**} \\
+                    &                     &                     &     (0.000)         &                     &                     &     (0.000)         \\
+\ensuremath{\overline{y_{j}^{88}}\cdot N_{j}^{88}}&                     &                     &      -0.000         &                     &                     &       0.000         \\
+                    &                     &                     &     (0.001)         &                     &                     &     (0.001)         \\
+\ensuremath{R^{2}}  &       0.056         &       0.116         &       0.118         &       0.131         &       0.188         &       0.201         \\
+\addlinespace
+\midrule
+\ensuremath{N}      &\multicolumn{1}{c}{658}         &\multicolumn{1}{c}{658}         &\multicolumn{1}{c}{658}         &\multicolumn{1}{c}{651}         &\multicolumn{1}{c}{651}         &\multicolumn{1}{c}{651}         \\
+\bottomrule
+\multicolumn{7}{l}{\tiny Huber-White standard errors in parentheses.}\\
+\multicolumn{7}{l}{\tiny \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}

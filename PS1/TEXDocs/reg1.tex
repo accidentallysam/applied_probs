@@ -1,0 +1,42 @@
+\begin{sidewaystable}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{OLS Estimates of Wage Equations\label{reg:ols}}
+\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+\toprule
+                    &\multicolumn{4}{c}{Log Wages}                                                          &\multicolumn{2}{c}{Level Wages}            \\\cmidrule(lr){2-5}\cmidrule(lr){6-7}
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         \\
+\midrule
+Constant            &       1.008\sym{***}&      -1.095\sym{***}&      -3.937\sym{*}  &                     &     -36.812\sym{***}&                     \\
+                    &     (0.153)         &     (0.261)         &     (1.832)         &                     &     (5.937)         &                     \\
+                    &     [0.158]         &     [0.292]         &     [2.097]         &                     &     [6.481]         &                     \\
+Education           &       0.102\sym{***}&       0.110\sym{***}&       0.109\sym{***}&                     &       2.077\sym{***}&                     \\
+                    &     (0.011)         &     (0.010)         &     (0.010)         &                     &     (0.217)         &                     \\
+                    &     [0.011]         &     [0.010]         &     [0.010]         &                     &     [0.281]         &                     \\
+Age                 &                     &       0.104\sym{***}&       0.414\sym{*}  &       0.105\sym{***}&       1.077\sym{***}&       1.057\sym{***}\\
+                    &                     &     (0.010)         &     (0.194)         &     (0.011)         &     (0.239)         &     (0.242)         \\
+                    &                     &     [0.012]         &     [0.219]         &     [0.013]         &     [0.298]         &     [0.317]         \\
+\ensuremath{\text{Age}^{2}}&                     &      -0.001\sym{***}&      -0.013         &      -0.001\sym{***}&      -0.010\sym{***}&      -0.009\sym{**} \\
+                    &                     &     (0.000)         &     (0.007)         &     (0.000)         &     (0.003)         &     (0.003)         \\
+                    &                     &     [0.000]         &     [0.008]         &     [0.000]         &     [0.004]         &     [0.004]         \\
+\ensuremath{\text{Age}^{3}}&                     &                     &       0.000         &                     &                     &                     \\
+                    &                     &                     &     (0.000)         &                     &                     &                     \\
+                    &                     &                     &     [0.000]         &                     &                     &                     \\
+\ensuremath{\text{Age}^{4}}&                     &                     &      -0.000         &                     &                     &                     \\
+                    &                     &                     &     (0.000)         &                     &                     &                     \\
+                    &                     &                     &     [0.000]         &                     &                     &                     \\
+Female              &                     &      -0.318\sym{***}&      -0.317\sym{***}&      -0.322\sym{***}&      -5.896\sym{***}&      -6.002\sym{***}\\
+                    &                     &     (0.040)         &     (0.040)         &     (0.040)         &     (0.910)         &     (0.920)         \\
+                    &                     &     [0.040]         &     [0.041]         &     [0.040]         &     [0.948]         &     [0.970]         \\
+White               &                     &      -0.100         &      -0.110         &      -0.098         &      -0.283         &      -0.269         \\
+                    &                     &     (0.072)         &     (0.073)         &     (0.073)         &     (1.641)         &     (1.658)         \\
+                    &                     &     [0.068]         &     [0.069]         &     [0.070]         &     [1.376]         &     [1.404]         \\
+Educ. Dummies       &\multicolumn{1}{c}{\ensuremath{\text{No}}}         &\multicolumn{1}{c}{\ensuremath{\text{No}}}         &\multicolumn{1}{c}{\ensuremath{\text{No}}}         &\multicolumn{1}{c}{\ensuremath{\text{Yes}}}         &\multicolumn{1}{c}{\ensuremath{\text{No}}}         &\multicolumn{1}{c}{\ensuremath{\text{Yes}}}         \\
+\midrule
+\ensuremath{R^2}    &       0.116         &       0.339         &       0.341         &       0.960         &       0.223         &       0.653         \\
+\ensuremath{F}      &      89.322         &      69.058         &      49.764         &    1141.595         &      38.691         &      89.333         \\
+\ensuremath{N}      &\multicolumn{1}{c}{680}         &\multicolumn{1}{c}{680}         &\multicolumn{1}{c}{680}         &\multicolumn{1}{c}{680}         &\multicolumn{1}{c}{680}         &\multicolumn{1}{c}{680}         \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize Standard errors in parentheses; robust standard errors in brackets.}\\
+\multicolumn{7}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{sidewaystable}

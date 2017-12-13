@@ -1,0 +1,55 @@
+\begin{table}[h!]\centering
+{\footnotesize
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{OLS and WLS Estimates of Infant Death Equations\label{reg:death}}
+\begin{tabular}{l*{4}{D{.}{.}{-1}}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+                    &\multicolumn{1}{c}{OLS}&\multicolumn{1}{c}{OLS}&\multicolumn{1}{c}{WLS (ATE)}&\multicolumn{1}{c}{WLS (TOT)}\\
+\midrule
+Constant            &    0.006448\sym{***}&    0.028405\sym{***}&    0.006970\sym{***}&    0.009245\sym{***}\\
+                    &  (0.000238)         &  (0.007453)         &  (0.000266)         &  (0.000503)         \\
+Mother Smoked       &    0.002768\sym{***}&    0.000470         &    0.000898         &   -0.000029         \\
+                    &  (0.000639)         &  (0.000673)         &  (0.000947)         &  (0.000778)         \\
+Mother Age          &                     &   -0.000902\sym{*}  &                     &                     \\
+                    &                     &  (0.000429)         &                     &                     \\
+Mother Age$^2$      &                     &    0.000018\sym{*}  &                     &                     \\
+                    &                     &  (0.000008)         &                     &                     \\
+Mother Education    &                     &    0.001243         &                     &                     \\
+                    &                     &  (0.000813)         &                     &                     \\
+Mother Education$^2$&                     &   -0.000049         &                     &                     \\
+                    &                     &  (0.000030)         &                     &                     \\
+Mother Unmarried    &                     &    0.002414\sym{**} &                     &                     \\
+                    &                     &  (0.000796)         &                     &                     \\
+Mother Black        &                     &    0.001064         &                     &                     \\
+                    &                     &  (0.001014)         &                     &                     \\
+Mother Hispanic     &                     &   -0.001608         &                     &                     \\
+                    &                     &  (0.001632)         &                     &                     \\
+Mother Other Race   &                     &   -0.000078         &                     &                     \\
+                    &                     &  (0.001945)         &                     &                     \\
+Mother Drank        &                     &   -0.001940         &                     &                     \\
+                    &                     &  (0.001887)         &                     &                     \\
+Prenatal Visits     &                     &   -0.001770\sym{***}&                     &                     \\
+                    &                     &  (0.000106)         &                     &                     \\
+Mo. Since Last      &                     &   -0.000010         &                     &                     \\
+                    &                     &  (0.000008)         &                     &                     \\
+Prev. Birth Pre-Term&                     &    0.018875\sym{***}&                     &                     \\
+                    &                     &  (0.003510)         &                     &                     \\
+Prev. Birth $>4\text{kg}$&                     &   -0.002420         &                     &                     \\
+                    &                     &  (0.001527)         &                     &                     \\
+Twins or Greater    &                     &    0.025695\sym{***}&                     &                     \\
+                    &                     &  (0.003757)         &                     &                     \\
+Hypertension        &                     &    0.002502         &                     &                     \\
+                    &                     &  (0.001514)         &                     &                     \\
+Mother Diabetic     &                     &    0.003915\sym{*}  &                     &                     \\
+                    &                     &  (0.001864)         &                     &                     \\
+\midrule
+\ensuremath{R^2}    &    0.000168         &    0.008884         &    0.000027         &    0.000000         \\
+\ensuremath{F}      &   18.734363         &   22.251426         &    0.898461         &    0.001419         \\
+\ensuremath{N}      &\multicolumn{1}{c}{138834}         &\multicolumn{1}{c}{138834}         &\multicolumn{1}{c}{138834}         &\multicolumn{1}{c}{138834}         \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Dependent variable is indicator for infant death. Robust standard errors in parentheses.}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}
+\end{table}

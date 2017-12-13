@@ -1,0 +1,181 @@
+\documentclass{article}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\usepackage[cmex10]{amsmath}
+\interdisplaylinepenalty=2500
+\usepackage{rotating}
+\usepackage{booktabs}
+\usepackage{dcolumn}
+\usepackage{enumerate}
+\usepackage{eqnarray}
+\usepackage{subfigure}
+
+\newcommand{\E}{\mathop{\bf E\/}}
+
+\begin{document}
+
+\begin{center}
+\textbf{ECON 2320 -- Economics of Labor and Population} \\
+\textbf{Problem Set 3} \\
+Samuel Brown \\
+Fall 2011 \\
+Due: November 14
+
+\end{center}
+\bigskip
+
+\arraycolsep 1pt
+
+\begin{enumerate}[(a)]
+
+\item The difference-in-differences estimation results can be seen in Table~\ref{reg:OLS}. With estimated 1988--1990 and 1988--1992 gain scores of 5.05 and 7.73, respectively, these results (spuriously) suggest that the P-900 program had a large and significant effect on test scores.
+
+\input{reg1.tex}
+
+\item The estimates in (a) may be biased by noise and mean reversion. Consider the following error-components model in which $i$ indexes individuals and $j$ indexes schools:
+\begin{equation}
+y_{ij}^{88} = \lambda_{j} + u_{j}^{88} + \alpha_{i}^{88}
+\end{equation}
+\begin{equation}
+y_{ij}^{90} = \lambda_{j} + u_{j}^{90} + \alpha_{i}^{90}
+\end{equation}
+where $\lambda_{j}$ is a permanent school component, $u_{j}^{t}$ is a transitory school component in year $t$, and $\alpha_{i}^{t}$ is an individual component in cohort $t$. Suppose that  $\lambda_{j}$, $u_{j}^{t}$, and $\alpha_{i}^{t}$ are all independent of each other. Suppose further that $\lambda_{j} \sim iid(0,\sigma_{\lambda}^{2})$, $u_{j}^{t} \sim iid(0,\sigma_{u}^{2})$, and $\alpha_{i}^{t} \sim iid(0,\sigma_{\alpha}^{2})$. Under this model the mean test scores for each school are as follows:
+\begin{equation}
+\overline{y_{j}^{88}} = \lambda_{j} + u_{j}^{88} + \frac{1}{N_{j}^{88}}\sum_{i \in j}{\alpha_{i}^{88}}
+\end{equation}
+\begin{equation}
+\overline{y_{j}^{90}} = \lambda_{j} + u_{j}^{90} + \frac{1}{N_{j}^{90}}\sum_{i \in j}{\alpha_{i}^{90}}
+\end{equation}
+where $N_{j}^{t}$ is the number of individuals in school $j$ in year $t$. As long as  $u_{j}^{t}$ and $\alpha_{i}^{t}$ are nontrivial and transitory and school enrollments are finite, there will be a positive correlation between the P900 eligibility indicator and the error term in the difference-in-differences regression model.
+
+The mean reversion bias function for 1988--1990 average test score gains can be derived as follows:
+\begin{eqnarray}
+\label{eq:mrbf}
+\rho &= &\frac{\text{Cov}\left(\overline{y_{j}^{90}}-\overline{y_{j}^{88}},\overline{y_{j}^{88}}\right)}{\text{Var}\left(\overline{y_{j}^{88}}\right)} \nonumber \\
+& = &\frac{\text{Cov}\left(\overline{y_{j}^{90}},\overline{y_{j}^{88}}\right)}{\text{Var}\left(\overline{y_{j}^{88}}\right)}-1 \nonumber \\
+& = &\frac{\sigma_{\lambda}^{2}}{\sigma_{\lambda}^{2}+\sigma_{u}^{2}+\frac{1}{N_{j}^{88}}\sigma_{\alpha}^{2}}-1
+\end{eqnarray}
+The mean reversion bias is zero if the variation in mean test scores is due entirely to variation across permanent school characteristics ($\sigma_{\lambda}^{2}$). In this case the difference-in-differences estimates are unbiased. The mean reversion bias is increasingly negative the larger are the variance of school- and individual-level shocks ($\sigma_{u}^{2}$ and $\sigma_{\alpha}^{2}$), and the fewer students there are enrolled in school $j$ in the first year ($N_{j}^{88}$).
+
+\item Since the treatment assignment is discontinuous, we can  identify the program effect off of discontinuities in outcomes at the threshold, while controlling for ``smooth'' functions of 1988 scores to eliminate mean reversion bias. The resulting estimates will be valid as long as (i) the control functions ``absorb'' all of the reversion bias, (ii) there are no other discontinuities determining outcomes at the threshold, (iii) there is perfect program compliance, and (iv) there is no endogenous sorting at the threshold.
+
+\item The relationship between probability of treatment and program eligibility can be seen in Figure~\ref{fig:ptreat}. Evidently program compliance is high, as there is a visibly ``sharp'' discontinuity in smoothed program assignment at the threshold. This suggests that program eligibility strongly (though not perfectly) predicts the probability of receiving treatment. Though non-random selection away from the threshold may confound estimates, the degree of non-compliance appears to be small.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.70\textwidth]{../Figures/fig1.eps}
+\caption{Program Allocation}
+\label{fig:ptreat}
+\end{figure}
+
+\item The P900 eligibility indicator is a valid instrument as long as (i) it strongly predicts the probability of receiving treatment, and (ii) it is uncorrelated with the error term in the reduced-form regression model. {\em The latter condition is satisfied as long as mean reversion bias is controlled for.} The first stage and reduced-form equations of the two-stage least squares (2SLS) estimator are as follows:
+\begin{equation}
+P900_{j} = \delta_{0}+\delta_{1} \cdot {ELIGIBLE}_{j} + \psi \left(\cdot\right) + \nu_{j}\text{, and}
+\end{equation}
+\begin{equation}
+\Delta y_{j}^{t} = \pi_{0}^{t}+\pi_{1}^{t} \cdot {ELIGIBLE}_{j} + \phi^{t} \left(\cdot\right) + \Delta \eta_{j}^{t}\text{,}
+\end{equation}
+where $t \in \left\{90,92\right\}$ denotes the terminal year, $\psi \left(\cdot\right)$ and $\phi^{t} \left(\cdot\right)$ are bias control functions, $\nu_{j}$ and $\Delta \eta_{j}^{t}$ are error terms, and
+\begin{eqnarray}
+ {ELIGIBLE}_{j} &= &\textbf{1}\left(\overline{y_{j}^{88}}<y^{*}\right) \nonumber \\
+&= &\textbf{1}\left( \lambda_{j} + u_{j}^{88} + \frac{1}{N_{j}^{88}}\sum_{i \in j}{\alpha_{i}^{88}}<y^{*}\right)
+\end{eqnarray}
+The coefficient $\delta_{1}$ denotes the discrete ``jump'' in probability of treatment below the threshhold, and $\pi_{1}^{t}$ denotes the discrete difference in gain scores below and above the threshhold.The 2SLS estimator uses the coefficient $\delta_{1}$ to ``inflate'' the reduced-form coefficient, yielding an estimated effect of $\pi_{1}^{t}/\delta_{1}$. To reiterate, the instument is valid as long as it is uncorrelated with the reduced-form error term $\Delta \eta_{j}^{t}$, that is to say,
+\begin{equation*}
+E \left[{{ELIGIBLE}_{j} \cdot \Delta \eta_{j}^{t} \mid \phi^{t} \left(\cdot\right)}\right]=0\text{,}
+\end{equation*}
+which holds if the control function $\phi^{t}\left(\cdot\right)$ ``absorbs'' all of the bias.
+
+\item The relationship between average 1988--1990 gain scores and and program eligibility can be seen in Figure~\ref{fig:gain}\subref{fig:gain90}.  Gain scores are ``smooth'' across the threshold, which suggests that the P-900 program had no effect on student performance between 1988 and 1990. The difference-in-differences estimates in part (a) above evidently ``picked up'' the mean-reversion effects characterized by the downward slope in Figure~\ref{fig:gain}\subref{fig:gain90}, rather than the true program effect.
+
+\begin{figure}[htb!]
+\centering
+\subfigure[1988--1990]{
+\includegraphics[width=0.45\textwidth]{../Figures/fig2.eps}
+\label{fig:gain90}
+}
+\subfigure[1988--1992]{
+\includegraphics[width=0.45\textwidth]{../Figures/fig3.eps}
+\label{fig:gain92}
+}
+\caption{Gain Scores by 1988 Average Score Relative to the Regional Cutoff}
+\label{fig:gain}
+\end{figure}
+
+The relationship between average 1988--1992 gain scores and and program eligibility can be seen in Figure~\ref{fig:gain}\subref{fig:gain92}.  Gain scores in this case exhibit a discrete ``jump'' across the threshold, which suggests that the P-900 program {\em did} have a positive effect on student performance between 1988 and 1992. The delayed program effect may be a result of changes in the flow of program resources over time, or to other, unobserved factors.
+
+\item First-stage, reduced-form, and IV estimates of program effects can be seen in Table~\ref{reg:2SLS}. In columns 1 and 4 there are no controls; columns 2 and 5 control for a cubic in the 1988 score; and columns 3 and 6 control for  a cubic in the 1988 score, a quadratic in school enrollment, and the interaction between 1988 score and school enrollment.
+
+In all cases the first-stage is ``strong'', with program eligibility ensuring treatment roughly 85\% of the time. This is unsurprising given the results in Figure~\ref{fig:ptreat} and the discussion in part (d). Thus as long as non-random selection away from the threshold is not a significant confounding factor, the instrument appears to be valid.
+
+The reduced-form estimates in Columns 1 and 4 are comparable to those in part (a), presumably because mean reversion bias is still present, as would be expected given the discussion in part (e). When bias is controlled for in Columns 2 and 3, the reduced-form estimates of 1988--1990 program effects are reduced in magnitude by roughly a factor of 4 and are no longer significant. When bias is controlled for in Columns 5 and 6, the reduced-form estimates of 1988--1992 program effects are reduced in magnitude by roughly a factor of 2 but remain significant at the 95\% level. These results are consistent with large mean reversion biases.
+
+The 2SLS estimates in Panel C of Table~\ref{reg:2SLS} exhibit similar characteristics to those of the reduced-form estimates in Panel B, though they are slightly larger as would be expected.
+
+Evidently controlling for bias eliminates a large portion of the estimated program effect, though it does not drive it to to zero.
+
+\input{reg2.tex}
+
+\item The 2SLS estimates using only schools within 7 points and 3 points of the eligibility threshold can be seen in Table~\ref{reg:2SLSbw}. At 4.2 points, the estimated program effect within 7 points of the threshold is roughly equal to the analogous full-sample estimate of 4.1 points. However, when the bandwidth is restricted to $\pm 3$ points, the estimated effect increases to 6.9 points. This suggests that there may be endogenous sorting at the threshold.
+
+\input{reg3.tex}
+
+That there may be endogenous sorting at the threshold is supported by Figure~\ref{fig:SES}. As can be seen in Figure~\ref{fig:SES}\subref{fig:SES90}, there is a visible ``jump'' in 1990 SES at the threshold. This suggests that at the time of program implementation high SES parents moved their children from eligible to ineligible schools, presumably because they saw P-900 eligibility as a signal of low school quality. There is not a corresponding ``jump'' in the 1990--1992 gain in SES shown in figure  Figure~\ref{fig:SES}\subref{fig:SES92}, which suggests that sorting did not take place after 1990.
+
+\begin{figure}[htb!]
+\centering
+\subfigure[1990 SES]{
+\includegraphics[width=0.45\textwidth]{../Figures/fig4.eps}
+\label{fig:SES90}
+}
+\subfigure[1990--1992 \ensuremath{\Delta\text{SES}}]{
+\includegraphics[width=0.45\textwidth]{../Figures/fig5.eps}
+\label{fig:SES92}
+}
+\caption{SES Status by 1988 Average Score Relative to the Regional Cutoff}
+\label{fig:SES}
+\end{figure}
+
+The 1990 SES and the 1990--1992 change in SES in the two subsamples can be seen in Figure~\ref{fig:SESbw}. These plots unambiguously show the same ``jump'' in 1990 SES at the threshold (Figures~\ref{fig:SESbw}\subref{fig:SES90bw7} and \subref{fig:SES90bw3}), and the ``smoothness'' of the 1990--1992 gain in SES across the threshold (Figures~\ref{fig:SESbw}\subref{fig:SES92bw7} and \subref{fig:SES92bw3}).
+
+\begin{figure}[htb!]
+\centering
+\subfigure[1990 SES, \ensuremath{\pm7} Points]{
+\includegraphics[width=0.45\textwidth]{../Figures/fig6.eps}
+\label{fig:SES90bw7}
+}
+\subfigure[1990--1992 \ensuremath{\Delta\text{SES}}, \ensuremath{\pm7} Points]{
+\includegraphics[width=0.45\textwidth]{../Figures/fig7.eps}
+\label{fig:SES92bw7}
+}
+\subfigure[1990 SES, \ensuremath{\pm3} Points]{
+\includegraphics[width=0.45\textwidth]{../Figures/fig8.eps}
+\label{fig:SES90bw3}
+}
+\subfigure[1990--1992 \ensuremath{\Delta\text{SES}}, \ensuremath{\pm3} Points]{
+\includegraphics[width=0.45\textwidth]{../Figures/fig9.eps}
+\label{fig:SES92bw3}
+}
+\caption{SES Status by 1988 Average Score Relative to the Regional Cutoff, within Narrow Bands of the Selection Threshold}
+\label{fig:SESbw}
+\end{figure}
+
+Note that the sign of the estimated coefficients in the control function  in Table~\ref{reg:2SLSbw} change as the sample of schools is narrowed. This is likely because in the smaller samples sorting bias dominates mean reversion bias, and these two effects work in opposite directions.
+
+\item This problem set examines the effect of the P-900 program on average test scores in Chilean schools. It identifies the program effect off of discontinuities in outcomes at the program's eligibility threshold. There several potential confounding factors: (i) {\bf mean reversion} bias, (ii) non-random {\bf selection} away from the threshold, and (iii) endogenous {\bf sorting} at the threshold.
+
+Standard difference-in-differences estimates overstate the program effect by confounding it with mean reversion. In other words, many schools that fell below the threshold in 1988 were small schools with ``bad'' draws of students, for whom an increase in test scores was to be expected in the proceeding years regardless of program enrollment. Failing to control for this increase overstates the estimated program effect.
+
+A regression discontinuity design with controls for mean reversion can overcome the bias in the difference-in-differences estimates. This design is valid as long as there is no non-random selection away from the threshold. In other words, there must be a sufficiently high degree of program compliance. Moreover, in order to identify the estimated effect with the program effect, there must not be endogenous sorting at the threshold.
+
+Though there is not perfect compliance, the data do not suggest a high degree of non-random selection away from the threshold. Controlling for mean reversion significantly decreases the estimated program effect, and there is only evidence for such an effect in 1992 scores. There is evidence of sorting, though it appears to be limited to a narrow bandwidth around the threshold, and does not seem to affect estimates when the full sample is used.
+
+In sum, failing to control for mean reversion bias significantly overstates the efficacy of the P-900 program, and the regression discontinuity design provides a ``credible'' way of removing this potential bias.
+
+\end{enumerate}
+
+\end{document}

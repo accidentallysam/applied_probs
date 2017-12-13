@@ -1,0 +1,31 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{2SLS Results for 1988{--}1992 Average Gain Scores, within Narrow Bands of the Selection Threshold\label{reg:2SLSbw}}
+\begin{tabular}{l*{3}{D{.}{.}{-1}}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+                    &\multicolumn{1}{c}{Full Sample}&\multicolumn{1}{c}{\ensuremath{\pm7} Points}&\multicolumn{1}{c}{\ensuremath{\pm3} Points}\\
+\midrule
+P-900               &       4.068\sym{**} &       4.168         &       6.916\sym{*}  \\
+                    &     (1.743)         &     (2.840)         &     (3.693)         \\
+\ensuremath{\overline{y_{j}^{88}}}&      -1.939         &      66.462         &     251.391         \\
+                    &     (1.591)         &    (64.042)         &   (883.807)         \\
+\ensuremath{\left(\overline{y_{j}^{88}}\right)^{2}}&       0.029         &      -1.510         &      -5.426         \\
+                    &     (0.027)         &     (1.465)         &    (20.385)         \\
+\ensuremath{\left(\overline{y_{j}^{88}}\right)^{3}}&      -0.000         &       0.011         &       0.039         \\
+                    &     (0.000)         &     (0.011)         &     (0.156)         \\
+\ensuremath{N_{j}^{88}}&       0.036         &       0.113         &      -0.778         \\
+                    &     (0.039)         &     (0.157)         &     (0.587)         \\
+\ensuremath{\left(N_{j}^{88}\right)^{2}}&      -0.000\sym{**} &      -0.000         &       0.001\sym{*}  \\
+                    &     (0.000)         &     (0.000)         &     (0.001)         \\
+\ensuremath{\overline{y_{j}^{88}}\cdot N_{j}^{88}}&       0.000         &      -0.002         &       0.013         \\
+                    &     (0.001)         &     (0.004)         &     (0.012)         \\
+\midrule
+\ensuremath{R^2}    &       0.201         &       0.113         &       0.106         \\
+\ensuremath{F}      &      30.553         &       4.672         &           .         \\
+\ensuremath{N}      &\multicolumn{1}{c}{651}         &\multicolumn{1}{c}{245}         &\multicolumn{1}{c}{102}         \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Huber-White standard errors in parentheses.}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}

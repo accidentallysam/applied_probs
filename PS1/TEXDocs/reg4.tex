@@ -1,0 +1,43 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{OLS, 2SLS, and \ensuremath{1^{\textrm{st}}}-Diff. Estimates of Log Wage Equations\label{reg:ols_2SLS_Diff}}
+\begin{tabular}{l*{4}{D{.}{.}{-1}}}
+\toprule
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+            &\multicolumn{1}{c}{OLS}&\multicolumn{1}{c}{2SLS}&\multicolumn{1}{c}{\ensuremath{1^{\textrm{st}}}-Diff.}&\multicolumn{1}{c}{\ensuremath{1^{\textrm{st}}}-Diff. 2SLS}\\
+\midrule
+Constant    &      -1.095\sym{***}&      -1.188\sym{***}&                     &                     \\
+            &     (0.261)         &     (0.269)         &                     &                     \\
+            &     [0.292]         &     [0.306]         &                     &                     \\
+            &   \{0.339\}         &   \{0.354\}         &                     &                     \\
+Education   &       0.110\sym{***}&       0.116\sym{***}&       0.062\sym{**} &       0.108\sym{***}\\
+            &     (0.010)         &     (0.010)         &     (0.019)         &     (0.030)         \\
+            &     [0.010]         &     [0.011]         &     [0.020]         &     [0.034]         \\
+            &   \{0.013\}         &   \{0.014\}         &                     &                     \\
+Age         &       0.104\sym{***}&       0.104\sym{***}&                     &                     \\
+            &     (0.010)         &     (0.011)         &                     &                     \\
+            &     [0.012]         &     [0.012]         &                     &                     \\
+            &   \{0.015\}         &   \{0.015\}         &                     &                     \\
+\ensuremath{\text{Age}^{2}}&      -0.001\sym{***}&      -0.001\sym{***}&                     &                     \\
+            &     (0.000)         &     (0.000)         &                     &                     \\
+            &     [0.000]         &     [0.000]         &                     &                     \\
+            &   \{0.000\}         &   \{0.000\}         &                     &                     \\
+Female      &      -0.318\sym{***}&      -0.316\sym{***}&                     &                     \\
+            &     (0.040)         &     (0.040)         &                     &                     \\
+            &     [0.040]         &     [0.040]         &                     &                     \\
+            &   \{0.049\}         &   \{0.049\}         &                     &                     \\
+White       &      -0.100         &      -0.098         &                     &                     \\
+            &     (0.072)         &     (0.072)         &                     &                     \\
+            &     [0.068]         &     [0.068]         &                     &                     \\
+            &   \{0.069\}         &   \{0.068\}         &                     &                     \\
+\midrule
+\ensuremath{R^2}&       0.339         &       0.338         &       0.031         &           .         \\
+\ensuremath{F}&      69.058         &      67.581         &      10.880         &           .         \\
+\ensuremath{N}&\multicolumn{1}{c}{680}         &\multicolumn{1}{c}{680}         &\multicolumn{1}{c}{340}         &\multicolumn{1}{c}{340}         \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Own-reports of education instrumented for with twin-reports.}\\
+\multicolumn{5}{l}{\footnotesize Standard errors in parentheses; robust standard errors in brackets;}\\
+\multicolumn{5}{l}{\footnotesize clustered standard errors in braces.}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

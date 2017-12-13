@@ -1,0 +1,50 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{OLS Estimates of Wage Equations\label{reg:ols_comp}}
+\begin{tabular}{l*{3}{D{.}{.}{-1}}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         \\
+\midrule
+Constant            &       1.701\sym{***}&       1.751\sym{***}&                     \\
+                    &     (0.019)         &     (0.020)         &                     \\
+                    &     [0.020]         &     [0.021]         &                     \\
+Education           &       0.070\sym{***}&       0.065\sym{***}&       0.040\sym{***}\\
+                    &     (0.001)         &     (0.001)         &     (0.002)         \\
+                    &     [0.001]         &     [0.001]         &     [0.002]         \\
+Experience          &       0.030\sym{***}&       0.029\sym{***}&       0.026\sym{***}\\
+                    &     (0.001)         &     (0.001)         &     (0.001)         \\
+                    &     [0.001]         &     [0.001]         &     [0.001]         \\
+\ensuremath{\text{Experience}^{2}}&      -0.046\sym{***}&      -0.044\sym{***}&      -0.038\sym{***}\\
+                    &     (0.002)         &     (0.002)         &     (0.002)         \\
+                    &     [0.002]         &     [0.002]         &     [0.002]         \\
+Female              &      -0.215\sym{***}&      -0.229\sym{***}&      -0.160\sym{***}\\
+                    &     (0.006)         &     (0.006)         &     (0.008)         \\
+                    &     [0.006]         &     [0.006]         &     [0.008]         \\
+Married             &       0.035\sym{***}&       0.033\sym{***}&       0.034\sym{***}\\
+                    &     (0.006)         &     (0.006)         &     (0.006)         \\
+                    &     [0.006]         &     [0.006]         &     [0.006]         \\
+Computer            &       0.172\sym{***}&       0.120\sym{***}&       0.068\sym{***}\\
+                    &     (0.006)         &     (0.007)         &     (0.007)         \\
+                    &     [0.006]         &     [0.007]         &     [0.007]         \\
+Pencil              &                     &       0.031\sym{***}&       0.007         \\
+                    &                     &     (0.008)         &     (0.008)         \\
+                    &                     &     [0.008]         &     [0.008]         \\
+Telephone           &                     &       0.042\sym{***}&       0.048\sym{***}\\
+                    &                     &     (0.008)         &     (0.008)         \\
+                    &                     &     [0.008]         &     [0.008]         \\
+Calculator          &                     &       0.046\sym{***}&       0.022\sym{**} \\
+                    &                     &     (0.007)         &     (0.007)         \\
+                    &                     &     [0.007]         &     [0.007]         \\
+Hammer              &                     &      -0.035\sym{***}&      -0.021\sym{**} \\
+                    &                     &     (0.006)         &     (0.008)         \\
+                    &                     &     [0.006]         &     [0.008]         \\
+Occ. Dummies        &\multicolumn{1}{c}{\ensuremath{\text{No}}}         &\multicolumn{1}{c}{\ensuremath{\text{No}}}         &\multicolumn{1}{c}{\ensuremath{\text{Yes}}}         \\
+\midrule
+\ensuremath{R^2}    &       0.333         &       0.343         &       0.987         \\
+\ensuremath{F}      &    1669.843         &    1047.286         &    1295.686         \\
+\ensuremath{N}      &\multicolumn{1}{c}{20042}         &\multicolumn{1}{c}{20042}         &\multicolumn{1}{c}{20042}         \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Standard errors in parentheses; robust standard errors in brackets.}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

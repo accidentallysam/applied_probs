@@ -1,0 +1,22 @@
+\begin{table}[h!]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{WLS Estimates of Low Birthweight Equations\label{reg:wlslbw}}
+\begin{tabular}{l*{2}{D{.}{.}{-1}}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
+                    &\multicolumn{1}{c}{WLS (ATE)}&\multicolumn{1}{c}{WLS (TOT)}\\
+\midrule
+Constant            &       0.051\sym{***}&       0.061\sym{***}\\
+                    &     (0.001)         &     (0.001)         \\
+Mother Smoked       &       0.037\sym{***}&       0.039\sym{***}\\
+                    &     (0.003)         &     (0.002)         \\
+\midrule
+\ensuremath{R^2}    &       0.005         &       0.005         \\
+\ensuremath{F}      &     175.397         &     268.148         \\
+\ensuremath{N}      &\multicolumn{1}{c}{138834}         &\multicolumn{1}{c}{138834}         \\
+\bottomrule
+\multicolumn{3}{l}{\footnotesize Dependent variable is indicator for low birthweight.}\\
+\multicolumn{3}{l}{\footnotesize Robust standard errors in parentheses.}\\
+\multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}
